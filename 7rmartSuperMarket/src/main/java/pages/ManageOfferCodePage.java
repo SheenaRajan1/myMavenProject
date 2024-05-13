@@ -79,8 +79,8 @@ public class ManageOfferCodePage {
 	public ManageOfferCodePage clickOnSaveButton() {
 		saveButton.click();
 		return this;
-		
 		}
+	
 	public boolean verifyAlertMessage() {
 		boolean alertTextIsDisplayed = alert.isDisplayed();
         return alertTextIsDisplayed;

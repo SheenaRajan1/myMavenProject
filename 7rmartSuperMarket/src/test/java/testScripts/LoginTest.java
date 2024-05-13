@@ -9,7 +9,7 @@ import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
 
-	@Test
+	@Test(groups= {"Regression"})
 
 	public void verifyWheatherTheUserIsAbleToLoginWithValidUserNameAndValidPassword() {
 		String userName = ExcelUtility.getString(1, 0, "LoginPage");
@@ -19,7 +19,7 @@ public class LoginTest extends Base {
 		Boolean manageTileRecieved = loginpage.verifyUserIsAbleToNavigateOnDashBoard();
         assertTrue (manageTileRecieved,"User is not able to login with valid username and valid password");
 	}
-	@Test
+	@Test(groups= {"Regression"})
 	public void verifyWheatherTheUserIsAbleToLoginWithInValidUserNameAndInValidPassword() {
 		String userName = ExcelUtility.getString(2, 0, "LoginPage");
 		String passWord = ExcelUtility.getString(2, 1, "LoginPage");
@@ -28,7 +28,7 @@ public class LoginTest extends Base {
 		boolean alertTextIsDisplayed=loginpage.recievedAlertWhileClickOnSignInButton();
 		assertTrue (alertTextIsDisplayed,"User is able to login with Invalid username and Invalid password");
 	}
-	@Test
+	@Test(groups= {"Smoke"})
 	public void verifyWheatherTheUserIsAbleToLoginWithInValidUserNameAndValidPassword() {
 		String userName = ExcelUtility.getString(3, 0, "LoginPage");
 		String passWord = ExcelUtility.getString(3, 1, "LoginPage");
@@ -37,7 +37,7 @@ public class LoginTest extends Base {
 		boolean alertTextIsDisplayed=loginpage.recievedAlertWhileClickOnSignInButton();
 		assertTrue (alertTextIsDisplayed,"User is able to login with Invalid username and valid password");
 	}
-	@Test
+	@Test(groups= {"login"})
 	public void verifyWheatherTheUserIsAbleToLoginWithValidUserNameAndInValidPassword() {
 		String userName = ExcelUtility.getString(4, 0, "LoginPage");
 		String passWord = ExcelUtility.getString(4, 1, "LoginPage");
