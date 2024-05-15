@@ -2,6 +2,7 @@ package testScripts;
 
 import static org.testng.Assert.assertTrue;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
@@ -19,10 +20,9 @@ public class LoginTest extends Base {
 		Boolean manageTileRecieved = loginpage.verifyUserIsAbleToNavigateOnDashBoard();
         assertTrue (manageTileRecieved,"User is not able to login with valid username and valid password");
 	}
-	@Test(groups= {"Regression"})
-	public void verifyWheatherTheUserIsAbleToLoginWithInValidUserNameAndInValidPassword() {
-		String userName = ExcelUtility.getString(2, 0, "LoginPage");
-		String passWord = ExcelUtility.getString(2, 1, "LoginPage");
+	@Test(groups= {"Regression"},dataProvider="LoginProvider")
+	public void verifyWheatherTheUserIsAbleToLoginWithInValidUserNameAndInValidPassword(String userName, String passWord) {
+		
         LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterTheUserNameOnUserNameFieldAndEnterThePasswordOnPasswordFieldAndClickOnSignInButton(userName, passWord);
 		boolean alertTextIsDisplayed=loginpage.recievedAlertWhileClickOnSignInButton();
@@ -46,5 +46,12 @@ public class LoginTest extends Base {
 		boolean alertTextIsDisplayed=loginpage.recievedAlertWhileClickOnSignInButton();
 		assertTrue (alertTextIsDisplayed,"User is able to login with valid username and Invalid password");
 	}
+	
+	@DataProvider(name = "LoginProvider")
+	public Object[][] getDataFromTestData() {
+		return new Object[][] { { ExcelUtility.getString(2, 0, "LoginPage"), ExcelUtility.getString(2, 1, "LoginPage") },
+
+		};
 
 }
+	}

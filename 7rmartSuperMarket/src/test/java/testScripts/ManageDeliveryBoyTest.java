@@ -11,7 +11,7 @@ import utilities.ExcelUtility;
 public class ManageDeliveryBoyTest extends Base {
 	
 	
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class,priority=1,description="verifyUserIsAbleToAddADeliveryBoyDetails")
 	public void verifyUserIsAbleToAddADeliveryBoyDetails() {
 		String userName=ExcelUtility.getString(1, 0, "LoginPage");
 	    String passWord=ExcelUtility.getString(1, 1, "LoginPage");

@@ -17,9 +17,9 @@
 </methods>
 </class>
 
-<class name="testScripts.ManageExpenseTest">
+<class name="testScripts.ManageDeliveryBoyTest">
 <methods>
-<include name="verifyUserIsAbleToAddNewAddExpense"></include>
+<include name="verifyUserIsAbleToAddADeliveryBoyDetails"></include>
 </methods>
 </class>
 
