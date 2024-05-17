@@ -20,7 +20,7 @@ public class Base {
 	
 	WebDriver driver;
 	public ScreenShotUtility scrshot;
-
+ 
 	@BeforeMethod(alwaysRun=true)
 	@Parameters("browser")
 	public void initilizeBrowser(String browser) throws Exception {

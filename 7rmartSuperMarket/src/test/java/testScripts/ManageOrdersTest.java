@@ -11,7 +11,7 @@ import utilities.ExcelUtility;
 public class ManageOrdersTest extends Base{
 	
 	
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class,description="verifyUserIsAbleToSearchAnOrderedItemAndAssignDeliveryBoy")
 	public void verifyUserIsAbleToSearchAnOrderedItemAndAssignDeliveryBoy()
 	{
 		String inputUsername = ExcelUtility.getString(1, 0, "LoginPage");

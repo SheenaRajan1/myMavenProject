@@ -8,7 +8,7 @@ import utilities.ExcelUtility;
 
 	public class ManageExpenseTest extends Base {
 
-		@Test
+		@Test(retryAnalyzer=retry.Retry.class,description="verifyUserIsAbleToAddNewAddExpense")
 		public void verifyUserIsAbleToAddNewAddExpense() throws InterruptedException {
 			String userName=ExcelUtility.getString(1, 0, "LoginPage");
 		    String passWord=ExcelUtility.getString(1, 1, "LoginPage");

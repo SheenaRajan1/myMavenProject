@@ -12,7 +12,7 @@ import utilities.ExcelUtility;
 
 public class MobileSliderTest extends Base {
 	
-	 @Test
+	 @Test(retryAnalyzer=retry.Retry.class,description="verifyUserIsAbleToAddMobileSliderPage")
 	   public void verifyUserIsAbleToAddMobileSliderPage() throws AWTException {
 		    String userName=ExcelUtility.getString(1, 0, "LoginPage");
 		    String passWord=ExcelUtility.getString(1, 1, "LoginPage");

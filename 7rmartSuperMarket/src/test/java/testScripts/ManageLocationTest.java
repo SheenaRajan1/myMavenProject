@@ -12,7 +12,7 @@ import utilities.ExcelUtility;
 
 public class ManageLocationTest extends Base {
 	
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class,description="verifyUserIsAbleToAddLocationAndDeleteThatLocation")
 	public void verifyUserIsAbleToAddLocationAndDeleteThatLocation() {
 		String userName=ExcelUtility.getString(1, 0, "LoginPage");
 	    String passWord=ExcelUtility.getString(1, 1, "LoginPage");

@@ -8,7 +8,7 @@ import utilities.ExcelUtility;
 
 	public class ManageSliderTest extends Base{
 		
-		@Test
+		@Test(retryAnalyzer=retry.Retry.class,description="verifyThatUserIsAbleToAddSlider")
 		public void verifyThatUserIsAbleToAddSlider() {
 			
 			String userName=ExcelUtility.getString(1, 0, "LoginPage");

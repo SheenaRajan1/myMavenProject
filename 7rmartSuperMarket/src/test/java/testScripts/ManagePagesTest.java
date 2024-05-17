@@ -8,7 +8,7 @@ import utilities.ExcelUtility;
 
 public class ManagePagesTest extends Base {
 	
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class,description="verifyUserIsAbleToAddPages")
 	public void verifyUserIsAbleToAddPages()  {
 		String username = ExcelUtility.getString(1, 0,"LoginPage" );
 		String password = ExcelUtility.getString(1, 1,"LoginPage" );

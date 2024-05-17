@@ -11,8 +11,8 @@ import pages.ManageOfferCodePage;
 import utilities.ExcelUtility;
 
 public class ManageOfferCodeTest extends Base{
-	@Test
 	
+	@Test(retryAnalyzer=retry.Retry.class,priority=1,description="verifyUserIsAbleToAddOfferCodePage")
 	public void verifyUserIsAbleToAddOfferCodePage() throws AWTException{
 	    String userName=ExcelUtility.getString(1, 0, "LoginPage");
 	    String passWord=ExcelUtility.getString(1, 1, "LoginPage");
@@ -26,7 +26,7 @@ public class ManageOfferCodeTest extends Base{
 		assertTrue (alertTextIsDisplayed,"User is not able to add OfferCodePage");
 		}
 	
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class,priority=2,description="verifyUserIsAbleToSearchAndEditTheOfferCode")
 	
 	public void verifyUserIsAbleToSearchAndEditTheOfferCode() {
 		String userName=ExcelUtility.getString(1, 0, "LoginPage");

@@ -10,7 +10,7 @@ import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
 
-	@Test(groups= {"Regression"})
+	@Test(groups= {"Regression"},retryAnalyzer=retry.Retry.class,priority=1,description="verifyUserIsAbleToAddADeliveryBoyDetails")
 
 	public void verifyWheatherTheUserIsAbleToLoginWithValidUserNameAndValidPassword() {
 		String userName = ExcelUtility.getString(1, 0, "LoginPage");
@@ -20,7 +20,7 @@ public class LoginTest extends Base {
 		Boolean manageTileRecieved = loginpage.verifyUserIsAbleToNavigateOnDashBoard();
         assertTrue (manageTileRecieved,"User is not able to login with valid username and valid password");
 	}
-	@Test(groups= {"Regression"},dataProvider="LoginProvider")
+	@Test(groups= {"Regression"},dataProvider="LoginProvider",retryAnalyzer=retry.Retry.class,priority=2,description="verifyUserIsAbleToAddADeliveryBoyDetails")
 	public void verifyWheatherTheUserIsAbleToLoginWithInValidUserNameAndInValidPassword(String userName, String passWord) {
 		
         LoginPage loginpage = new LoginPage(driver);
@@ -28,7 +28,7 @@ public class LoginTest extends Base {
 		boolean alertTextIsDisplayed=loginpage.recievedAlertWhileClickOnSignInButton();
 		assertTrue (alertTextIsDisplayed,"User is able to login with Invalid username and Invalid password");
 	}
-	@Test(groups= {"Smoke"})
+	@Test(groups= {"Smoke"},retryAnalyzer=retry.Retry.class,priority=4,description="verifyUserIsAbleToAddADeliveryBoyDetails")
 	public void verifyWheatherTheUserIsAbleToLoginWithInValidUserNameAndValidPassword() {
 		String userName = ExcelUtility.getString(3, 0, "LoginPage");
 		String passWord = ExcelUtility.getString(3, 1, "LoginPage");
@@ -37,7 +37,7 @@ public class LoginTest extends Base {
 		boolean alertTextIsDisplayed=loginpage.recievedAlertWhileClickOnSignInButton();
 		assertTrue (alertTextIsDisplayed,"User is able to login with Invalid username and valid password");
 	}
-	@Test(groups= {"login"})
+	@Test(groups= {"login"},retryAnalyzer=retry.Retry.class,priority=3,description="verifyUserIsAbleToAddADeliveryBoyDetails")
 	public void verifyWheatherTheUserIsAbleToLoginWithValidUserNameAndInValidPassword() {
 		String userName = ExcelUtility.getString(4, 0, "LoginPage");
 		String passWord = ExcelUtility.getString(4, 1, "LoginPage");
